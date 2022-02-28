@@ -5,3 +5,6 @@ set(CMAKE_CXX_FLAGS "-std=c++11")
 
 add_executable(can_sender can_sender.cpp)
 add_executable(can_receiver can_receiver.cpp)
+add_executable(can_thread can_thread.cpp)
+
+target_link_libraries(can_thread pthread)

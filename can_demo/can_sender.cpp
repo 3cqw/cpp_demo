@@ -17,7 +17,7 @@ int main()
     struct can_frame frame[2] = {{0}};
     s = socket(PF_CAN, SOCK_RAW, CAN_RAW); //创建套接字
     strcpy(ifr.ifr_name, "vcan0");
-    ioctl(s, SIOCGIFINDEX, &ifr); //指定 can0 设备的index
+    ioctl(s, SIOCGIFINDEX, &ifr); //指定ifr的name对应的网卡的索引值（唯一）
     addr.can_family = AF_CAN;
     addr.can_ifindex = ifr.ifr_ifindex;
     std::cout << "add.can ifindex: " << addr.can_ifindex << std::endl;
@@ -25,7 +25,14 @@ int main()
     //禁用过滤规则，本进程不接收报文，只负责发送
    //setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, NULL, 0);
     frame[0].can_id = 0x22;
-    frame[0].data[0] = 'A';
+    frame[0].data[0] = '0';
+    frame[0].data[0] = '1';
+    frame[0].data[0] = '2';
+    frame[0].data[0] = '3';
+    frame[0].data[0] = '4';
+    frame[0].data[0] = '5';
+    frame[0].data[0] = '6';
+
     std::cout << "pyload: " << sizeof(frame[0].data) << std::endl;
     frame[0].can_dlc = 1;
 

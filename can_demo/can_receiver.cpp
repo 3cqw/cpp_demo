@@ -26,22 +26,27 @@ int main()
     rfilter[0].can_id = 0x22;
     rfilter[0].can_mask = CAN_SFF_MASK;
     //设置过滤规则
-    //setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, &rfilter, sizeof(rfilter));
+     setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, &rfilter, sizeof(rfilter));
     //禁用过滤规则
-    //setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, NULL, 0);
+    // setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, NULL, 0);
     while (1)
     {
-        //nbytes = read(s, &frame, sizeof(frame)); //接收报文
+        // nbytes = read(s, &frame, sizeof(frame)); //接收报文
         socklen_t len = sizeof(addr);
         //接收所有可能的canid的数据
-        nbytes = recvfrom(s, &frame, sizeof(frame), 0, (struct sockaddr*)&addr, &len);
+        nbytes = recvfrom(s, &frame, sizeof(frame), 0, (struct sockaddr *)&addr, &len);
         //显示报文
         if (nbytes > 0)
         {
             printf("ID = 0x%X DLC = % d data[0] = 0x % X\n", frame.can_id,
                    frame.can_dlc, frame.data[0]);
+            printf("ID = 0x%X DLC = % d data[1] = 0x % X\n", frame.can_id,
+                   frame.can_dlc, frame.data[1]);
+            printf("ID = 0x%X DLC = % d data[2] = 0x % X\n", frame.can_id,
+                   frame.can_dlc, frame.data[2]);
         }
-        else{
+        else
+        {
             std::cout << "no data recieved" << std::endl;
         }
     }
