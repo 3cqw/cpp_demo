@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cqw/github_db/cpp_demo/udp_demo/udp_client.cpp
+unistd.h
+-
+string.h
+-
+stdio.h
+-
+iostream
+-
+netinet/in.h
+-
+sys/socket.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+
