@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/opc_ua_server.dir/opc_ua_server.cpp.o  -o opc_ua_server -lopen62541 

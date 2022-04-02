@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cqw/github_db/cpp_demo/OPC_UA_demo/opc_ua_server.cpp
+open62541/plugin/log_stdout.h
+-
+open62541/server.h
+-
+open62541/server_config_default.h
+-
+open62541/client_subscriptions.h
+-
+signal.h
+-
+stdlib.h
+-
+

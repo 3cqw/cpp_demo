@@ -32,9 +32,8 @@ int main()
     frame[0].data[0] = '4';
     frame[0].data[0] = '5';
     frame[0].data[0] = '6';
-
-    std::cout << "pyload: " << sizeof(frame[0].data) << std::endl;
     frame[0].can_dlc = 1;
+    std::cout << "pyload: " << sizeof(frame[0].data) << std::endl;
 
     //生成两个报文
     frame[1].can_id = 0x00;

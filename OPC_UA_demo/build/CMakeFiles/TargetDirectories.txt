@@ -1,0 +1,5 @@
+/home/cqw/github_db/cpp_demo/OPC_UA_demo/build/CMakeFiles/rebuild_cache.dir
+/home/cqw/github_db/cpp_demo/OPC_UA_demo/build/CMakeFiles/edit_cache.dir
+/home/cqw/github_db/cpp_demo/OPC_UA_demo/build/CMakeFiles/opc_ua_server_oo.dir
+/home/cqw/github_db/cpp_demo/OPC_UA_demo/build/CMakeFiles/opc_ua_server.dir
+/home/cqw/github_db/cpp_demo/OPC_UA_demo/build/CMakeFiles/opc_ua_client.dir

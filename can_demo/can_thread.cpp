@@ -25,7 +25,7 @@ int main()
     bind(s, (struct sockaddr *)&addr, sizeof(addr)); //将套接字与 can0 绑定
 
     pthread_t id_sender, id_receive;
-    
+
     pthread_create(&id_receive, NULL, thread_receive, NULL);
     pthread_create(&id_sender, NULL, thread_sender, NULL);
 
@@ -61,7 +61,7 @@ void *thread_sender(void *arg)
     {
         // nbytes = write(s, &frame[0], sizeof(frame[0])); //发送 frame[0]
         //对于任何被绑定的can设备发送数据
-        nbytes = sendto(s, &frame[0], sizeof(frame[0]), 0, (struct sockaddr *)&addr, sizeof(addr));
+        nbytes = sendto(s, &frame[0], sizeof(frame[0]), MSG_DONTWAIT, (struct sockaddr *)&addr, sizeof(addr));
         if (nbytes != sizeof(frame[0]))
         {
             printf("Send Error frame[0]\n!");
@@ -69,7 +69,7 @@ void *thread_sender(void *arg)
         }
         sleep(1);
         // nbytes = write(s, &frame[1], sizeof(frame[1])); //发送 frame[1],并
-        nbytes = sendto(s, &frame[1], sizeof(frame[1]), 0, (struct sockaddr *)&addr, sizeof(addr)); //发送 frame[1]
+        nbytes = sendto(s, &frame[1], sizeof(frame[1]), MSG_DONTWAIT, (struct sockaddr *)&addr, sizeof(addr)); //发送 frame[1]
         if (nbytes != sizeof(frame[1]))
         {
             printf("Send Error frame[1]\n!");

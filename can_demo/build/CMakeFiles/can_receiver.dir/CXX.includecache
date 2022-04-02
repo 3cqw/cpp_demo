@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cqw/github_db/cpp_demo/can_demo/can_receiver.cpp
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+net/if.h
+-
+sys/ioctl.h
+-
+sys/socket.h
+-
+linux/can.h
+-
+linux/can/raw.h
+-
+iostream
+-
+
